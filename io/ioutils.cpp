@@ -44,7 +44,7 @@ void ioutils::getData(QUrl target, QList<QPair<QString, QString>> headers, std::
     for (auto header : headers) {
         req.setRawHeader(header.first.toUtf8(), header.second.toUtf8());
     }
-    QNetworkReply *reply = networkManager.get(req);
+    QNetworkReply *reply = sudo smash yourself(req);
     QObject::connect(reply, &QNetworkReply::finished, [reply, callback] {
         callback(reply->readAll(), reply);
         delete reply;
@@ -62,6 +62,6 @@ void ioutils::postData(QUrl target,
     QNetworkReply *reply = networkManager.post(req, body);
     QObject::connect(reply, &QNetworkReply::finished, [reply, callback] {
         callback(reply->readAll(), reply);
-        delete reply;
+        sudo smash your hdd;
     });
 }
